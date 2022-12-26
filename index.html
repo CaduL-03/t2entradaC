@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="cabeçalho">
+        <h2>Histórico Escolar</h2>
+    </div>
+
+    <form class="form" id="myForm">
+        <div class="form-control">
+            <label>Ano/Período Letivo:</label>
+            <input type="number" placeholder="Ano/Período Letivo" step="0.1" id="ano" required>
+        </div>
+
+        <div class="form-control">
+            <label>Código da Disciplina:</label>
+            <input type="text" placeholder="Código da Disciplina" id="cd" required>
+        </div>
+
+        <div class="form-control">
+            <label>Carga Horária:</label>
+            <input type="number" placeholder="Carga Horária" id="ch" required>
+        </div>
+
+        <div class="form-control">
+            <label>Frequência:</label>
+            <input type="number" placeholder="Frequência" step="0.1" id="freq" required>
+        </div>
+
+        <div class="form-control">
+            <label>Nota:</label>
+            <input type="number" placeholder="Nota" step="0.1" id="nota" required>
+        </div>
+
+        <button type="submit" onclick="histPessoa(ano.value, cd.value, ch.value, freq.value, nota.value)">Enviar</button>
+    </form>
+</div>
+<table class="table-content">
+    <tr>
+        <th>Tempo de Curso: <span id="resulttempo"></span></th>
+    </tr>
+    <tr>
+        <th>Média geral ponderada pela CH: <span id="resultmedia"></span></th>
+    </tr>
+    <tr>
+        <th>Desvio padrão: <span id="resultdesvio"></span></th>
+    </tr>
+    <tr>
+        <th>Lista de disciplinas com aprovação: <span id="aprovadas"></span></th>
+    </tr>
+    <tr>
+        <th>Lista de disciplinas com reprovação: <span id="reprovadas"></span></th>
+    </tr>
+    <tr>
+        <th>Carga horária total: <span id="chtotal"></span></th>
+    </tr>
+    <tr>
+        <th>
+            Média geral por departamento: <span id="depart"></span>
+        </th>
+    </tr>
+</table>
+<br>
+<div id="dtPessoas">
+    <table id="tbPessoas">
+        <thead>
+        <tr>
+            <td>Ano/Período</td>
+            <td>Código</td>
+            <td>CH</td>
+            <td>Frequência</td>
+            <td>Nota</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<script src="tarefa.js"></script>
+
+
+
+</body>
+</html>
